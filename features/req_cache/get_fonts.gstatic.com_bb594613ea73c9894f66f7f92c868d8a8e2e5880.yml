@@ -8,15 +8,17 @@
   Content-Type: font/woff2
   Access-Control-Allow-Origin: "*"
   Timing-Allow-Origin: "*"
-  Date: Tue, 15 Dec 2015 13:55:48 GMT
-  Expires: Wed, 14 Dec 2016 13:55:48 GMT
+  Date: Fri, 08 Jan 2016 02:58:29 GMT
+  Expires: Sat, 07 Jan 2017 02:58:29 GMT
   Last-Modified: Wed, 14 Jan 2015 22:47:38 GMT
   X-Content-Type-Options: nosniff
   Server: sffe
   Content-Length: '14596'
   X-XSS-Protection: 1; mode=block
   Cache-Control: public, max-age=31536000
-  Age: '1835242'
+  Age: '307903'
+  Alternate-Protocol: 443:quic,p=1
+  Alt-Svc: quic=":443"; ma=604800; v="30,29,28,27,26,25"
   Connection: close
 :content: !binary |-
   d09GMgABAAAAADkEABEAAAAAgBAAADigAAIAAAAAAAAAAAAAAAAAAAAAAAAA

@@ -1,0 +1,17 @@
+---
+:scope: 
+:url: http://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint16
+:body: ''
+:status: 200
+:method: get
+:headers:
+  Date: Mon, 11 Jan 2016 16:30:10 GMT
+  Server: Apache
+  Access-Control-Allow-Origin: "*"
+  Vary: Accept-Encoding,User-Agent
+  Content-Length: '59'
+  Connection: close
+  Content-Type: application/json
+  Content-Language: en
+:content: |
+  {"type":"uint16","length":1,"data":[10227],"success":true}

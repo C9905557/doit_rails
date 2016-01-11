@@ -1,0 +1,15 @@
+---
+:scope: 
+:url: https://location.services.mozilla.com/v1/country?key=no-mozilla-api-key
+:body: "{}"
+:status: 200
+:method: post
+:headers:
+  Access-Control-Allow-Origin: "*"
+  Access-Control-Max-Age: '2592000'
+  Content-Type: application/json; charset=UTF-8
+  Date: Mon, 11 Jan 2016 16:30:03 GMT
+  Server: nginx
+  Content-Length: '74'
+  Connection: close
+:content: '{"country_name": "United States", "fallback": "ipf", "country_code": "US"}'

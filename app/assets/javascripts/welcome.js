@@ -26,4 +26,9 @@ $(document).ready(function() {
       marker.setMap(map);
     })(i);
   };
+  
+  $.getJSON("//qrng.anu.edu.au/API/jsonI.php", { length: 1, type: "uint16" }, function( obj ) {
+    $( "#rndnum" ).text( obj.data );
+  })
+
 });

@@ -15,3 +15,8 @@ Feature: As a user,
   Scenario: User sees particular pin on the map
     Given I am on the homepage
     Then I should see a pin on the map with Driver volunteer opportunity
+
+  @javascript @billy @vcr
+  Scenario: User sees a random number from Australia
+    Given I am on the homepage
+    Then I should see a random number on the page
