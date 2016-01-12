@@ -11,4 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-/features/reg_cache/*
+features/req_cache/
+features/vcr_cassettes/
