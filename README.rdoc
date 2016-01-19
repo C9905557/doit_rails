@@ -1,1 +1,0 @@
-Shows volunteer opportunities around North end based on doit API
