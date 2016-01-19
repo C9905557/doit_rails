@@ -24,7 +24,7 @@ Billy.configure do |c|
                      "https://www.facebook.com/dialog/oauth",
                      "http://cdn.api.twitter.com/1/urls/count.json"]
   c.persist_cache = true
-  c.cache_path = 'features/req_cache/'
+  c.cache_path = 'features/cache/billy/'
 end
 Billy.proxy.restore_cache
 #Capybara.javascript_driver = :poltergeist_billy

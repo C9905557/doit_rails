@@ -12,9 +12,15 @@ Feature: As a user,
     Then I should see a map
 
   @javascript @billy @vcr
-  Scenario: User sees particular pin on the map
+  Scenario: User sees all the pins on the map
     Given I am on the homepage
-    Then I should see a pin on the map with Driver volunteer opportunity
+    Then I should see on the map same number of pins as volunteer opportunities 
+
+  @javascript @billy @vcr
+  Scenario: User sees an error message when Doit is unreachable
+    Given I am on the homepage while Doit is unresponsive
+    Then I should see an error message in the Do-it status on the page
+
 
   @javascript @billy @vcr
   Scenario: User sees a random number from Australia
