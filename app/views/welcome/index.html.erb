@@ -4,18 +4,20 @@
 <h1>Volunteer opportunities</h1>
 <div id="map-container">
   <div id="map-canvas"></div>
+  <div id="doit_status">Do-it data loading</div>
 </div>
 
+<h2>Random number from afar</h2>
+
+<p>My random number: <span id="rndnum">----</span></p>
 
 <h2>Statistics</h2>
 
 <h3>Global statistics from the last response</h3>
-Items per page: <%= @items_per_page %><br />
-Total numbers of items: <%= @total_items %><br />
-Total number of pages: <%= @total_pages %>
+Items per page: <span id="items_per_page">0</span><br />
+Total numbers of items: <span id="total_items">0</span><br />
+Total number of pages: <span id="total_pages">0</span>
 
-<h3>Number of opportunities per location</h3>
-<%  @locations_count.sort_by {|k,v| v}.reverse.each do |key,value| %>
-   Coordinates: <%= key %>  Number of opportunities: <%= value %> <br />
-<% end %> 
-<p>Total numbers of markers: <%= @total_markers_count %>; number of unique marker locations: <%= @locations_count.length %></p>
+<% if Rails.env.test? %>
+  <div id="RailsTestEnv"> </div>
+<% end %>

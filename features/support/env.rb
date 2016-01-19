@@ -5,6 +5,37 @@
 # files.
 
 require 'cucumber/rails'
+require 'capybara'
+require 'billy/cucumber'
+
+#Capybara.javascript_driver = :poltergeist
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :js_errors => false, :debug => true)
+end
+
+Billy.configure do |c|
+  c.cache = true
+  c.ignore_params = ["http://www.google-analytics.com/__utm.gif",
+                     "https://r.twimg.com/jot",
+                     "http://p.twitter.com/t.gif",
+                     "http://p.twitter.com/f.gif",
+                     "http://www.facebook.com/plugins/like.php",
+                     "https://www.facebook.com/dialog/oauth",
+                     "http://cdn.api.twitter.com/1/urls/count.json"]
+  c.persist_cache = true
+  c.cache_path = 'features/cache/billy/'
+end
+Billy.proxy.restore_cache
+#Capybara.javascript_driver = :poltergeist_billy
+Before('@billy') do
+  Capybara.current_driver = :selenium_billy
+end
+
+
+After('@billy') do
+  Capybara.use_default_driver
+end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -55,4 +86,3 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
