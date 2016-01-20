@@ -19,20 +19,21 @@ $(document).ready( function() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  // Base href to get the doit data
+  // Url and base href to get the doit data
+  var doitUrl = "/doitproxy.json" ;
   var doitHrefBase = "/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2" ;
 
   //var locationsCount = {} ;
 
   // Get the Do-it data asynchronously
   $.ajax({
-      url : '/doitproxy.json',
+      url : doitUrl,
       type : 'GET',
       jsonp: "callback",
       dataType: "jsonp",
       data :  { href: doitHrefBase },   
       timeout : 100000,    // 10 seconds timeout
-      hrefBase : "/v1/opportunities\?lat\=51.567526\&lng\=-0.182308\&miles\=2", 
+      cache: true,
       success : function(doitResponse) {
           // Put the markers on the map
           var items = doitResponse["data"]["items"]
@@ -51,6 +52,7 @@ $(document).ready( function() {
           var nextHash = doitResponse["links"]["next"] ;
           var href = nextHash ? nextHash["href"] : null ;
           if( href ) {
+              this.url = doitUrl ;
               this.data = { href: href } ;
               $.ajax(this) ;   //get next buffer
               return ;
