@@ -21,3 +21,12 @@ Total number of pages: <span id="total_pages">0</span>
 <% if Rails.env.test? %>
   <div id="RailsTestEnv"> </div>
 <% end %>
+
+<script type="text/javascript">
+  var myLatlng = new google.maps.LatLng(51.567526, -0.182308);
+  var handler = Gmaps.build('Google');
+  handler.buildMap( {
+      provider: { zoom: 12, center: myLatlng },
+      internal: { id: 'map-canvas' }
+  } );
+</script>
