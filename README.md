@@ -21,7 +21,7 @@ The Welcome controller was changed :
 
 * `#index` only renders the form without any processing
 
-* `#doitproxy` was added (along with a route) to request a page from the Do-it server and forward it as a JSONP response
+* `#doitproxy` was added (along with a route) to request a page from the Do-it server and forward it as a JSON response
 
 The code to query the data and create was added in an ajax query in welcome.js
 
@@ -85,7 +85,7 @@ Setup a variable according to the existance of the #RailsTestEnv div, and use it
 ```
 var MarkerOptimize = $('#RailsTestEnv').length ? false : true
 ...
-var marker = new google.maps.Marker({position: myLatlng, title: title, optimized: MarkerOptimize });
+handler.addMarkers( markersHash, {optimized: MarkerOptimize} ) ;
 ```
 
 Other ways are possible: add a header, add an attribute to the body tag, etc...
