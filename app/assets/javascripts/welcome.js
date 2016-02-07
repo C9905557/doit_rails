@@ -24,7 +24,7 @@ $(document).ready( function() {
       cache: true,
       success : function(doitResponse) {
           var markersHash = doitResponse.markers ;
-          handler.addMarkers( markersHash ) ;
+          handler.addMarkers( markersHash, {optimized: MarkerOptimize} ) ;
           console.log( "Doit response success, page: " + doitResponse.meta.current_page) ;
 
           var nextPage = doitResponse.meta.next_page ;
